@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+
+<div class="section" method="get">
+    <div class="section">
+
+        <h2>Portfolio</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Stocks owned</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for stocks1 in stocks1 %}
+                    <tr>
+                        <td>{{ stocks1.symbol }}</td>
+                        <td>{{ stocks1.quantity }} </td>
+                        <td>{{ stocks1.price }} </td>
+                        <td>{{ stocks1.value }} </td>
+                        <td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div>
+            
+        </div>
+        <table>
+                    <thead>
+                        <tr>
+                            <th>Stock value</th>
+                            <th>Cash balance</th>
+                            <th>Total value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> {{ total_value_stocks }}</td>
+                            <td> {{ cash_usd }} </td>
+                            <td> {{ cash_stocks }}</td>
+                        </tr>
+                    </tbody>
+        </table>
+</div>
+{% endblock %}

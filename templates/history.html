@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+
+<div class="section" method="get">
+    <div class="section">
+
+        <h2>Transaction history</h2>
+        <table class="center">
+            <thead>
+                <tr>
+                    <th> Stock </th>
+                    <th> transaction type </th>
+                    <th> Price </th>
+                    <th> quantity </th>
+                    <th> time and date </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for transactions_ls in transactions_ls %}
+                    <tr>
+                        <td>{{ transactions_ls.stock_symbol }}</td>
+                        <td>{{ transactions_ls.transaction_type }} </td>
+                        <td>{{ transactions_ls.price }} </td>
+                        <td>{{ transactions_ls.quantity }} </td>
+                        <td>{{ transactions_ls.time }} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+{% endblock %}
